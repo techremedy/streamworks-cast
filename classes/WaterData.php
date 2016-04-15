@@ -42,11 +42,11 @@ class WaterData{
 
 		if($currentFlowRate != "Data Error")
 		{
-			$printOut = '<span class="flowrate">' . $currentFlowRate . '</span> <span class="units">cfs</span>';
+			$printOut = $currentFlowRate;
 		}
 		else
 		{
-			$printOut = '<span class="flowrate red">' . $currentFlowRate . '</span>';
+			$printOut = 'Data Error';
 		}
 		return $printOut;
 	}

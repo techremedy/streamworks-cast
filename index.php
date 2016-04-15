@@ -19,7 +19,7 @@ $waterData = new WaterData;
 			<h2>Fanny Bridge</h2>
 			<?php
 				$fanny = $waterData->getWaterData("10337500"); 
-				print($fanny);
+				print('<span class="flowrate">' . $fanny . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->
@@ -27,7 +27,7 @@ $waterData = new WaterData;
 			<h2>Truckee</h2>
 			<?php
 				$truckee = $waterData->getWaterData("10338000"); 
-				print($truckee);
+				print('<span class="flowrate">' . $truckee . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->
@@ -35,7 +35,7 @@ $waterData = new WaterData;
 			<h2>Boca Bridge</h2>
 			<?php
 				$boca = $waterData->getWaterData("10344505"); 
-				print($boca);
+				print('<span class="flowrate">' . $boca . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->
@@ -45,7 +45,7 @@ $waterData = new WaterData;
 			<h2>LT abv Boca</h2>
 			<?php
 				$ltabvboca = $waterData->getWaterData("10344400"); 
-				print($ltabvboca);
+				print('<span class="flowrate">' . $ltabvboca . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->		
@@ -53,7 +53,7 @@ $waterData = new WaterData;
 			<h2>LT Boca Dam</h2>
 			<?php
 				$ltbocadam = $waterData->getWaterData("10344500"); 
-				print($ltbocadam);
+				print('<span class="flowrate">' . $ltbocadam . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->		
@@ -61,7 +61,7 @@ $waterData = new WaterData;
 			<h2>Farad</h2>
 			<?php
 				$farad = $waterData->getWaterData("10346000"); 
-				print($farad);
+				print('<span class="flowrate">' . $farad . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->		
@@ -71,7 +71,7 @@ $waterData = new WaterData;
 			<h2>Reno</h2>
 			<?php
 				$reno = $waterData->getWaterData("10348000"); 
-				print($reno);
+				print('<span class="flowrate">' . $reno . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->		
@@ -79,7 +79,7 @@ $waterData = new WaterData;
 			<h2>Glendale Ave</h2>
 			<?php
 				$glendale = $waterData->getWaterData("10348036"); 
-				print($glendale);
+				print('<span class="flowrate">' . $glendale . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->		
@@ -87,7 +87,7 @@ $waterData = new WaterData;
 			<h2>Vista Ave</h2>
 			<?php
 				$vista = $waterData->getWaterData("10350000"); 
-				print($vista);
+				print('<span class="flowrate">' . $vista . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->	
@@ -97,7 +97,7 @@ $waterData = new WaterData;
 			<h2>Tracy</h2>
 			<?php
 				$tracy = $waterData->getWaterData("10350340"); 
-				print($tracy);
+				print('<span class="flowrate">' . $tracy . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->	
@@ -105,7 +105,7 @@ $waterData = new WaterData;
 			<h2>Derby Dam</h2>
 			<?php
 				$derby = $waterData->getWaterData("10351600"); 
-				print($derby);
+				print('<span class="flowrate">' . $derby . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->	
@@ -113,7 +113,7 @@ $waterData = new WaterData;
 			<h2>Wadsworth</h2>
 			<?php
 				$wadsworth = $waterData->getWaterData("10351650"); 
-				print($wadsworth);
+				print('<span class="flowrate">' . $wadsworth . '</span> <span class="units">cfs</span>');
 			?>
 			<hr>
 		</div><!-- .station -->	
