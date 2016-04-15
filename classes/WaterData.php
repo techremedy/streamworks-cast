@@ -23,6 +23,7 @@ class WaterData{
 		  $time = array($humanDate, $humanTime);
 		  return $time;
 		}
+
 		$site = 'http://waterservices.usgs.gov/nwis/iv/?sites='.$site.'&format=json';
 		$string = file_get_contents($site);
 		$json = json_decode($string, true);
