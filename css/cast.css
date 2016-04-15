@@ -1,0 +1,42 @@
+body {
+  background-color: #323b52;
+  color: #bbc8e6;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+.logo {
+  float:right;
+  margin-top: 350px;
+}
+
+.flowrate {
+  font-size: 26px;
+}
+
+.red {
+  color: red;
+}
+
+.units {
+
+}
+
+#date-time {
+  float: right;
+  text-align: right;
+}
+
+.date {
+  font-size: 50px;
+}
+
+.time {
+  font-size: 36px;
+}
