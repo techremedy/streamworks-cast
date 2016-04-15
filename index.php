@@ -1,51 +1,10 @@
 <?php
-	
-	function getWaterData($site)
-	{
-		if($site == 'time'){
-          $string = file_get_contents('http://waterservices.usgs.gov/nwis/iv/?sites=10348000&format=json');
-		  $json = json_decode($string, true);
-		  $siteName = ($json["value"]["timeSeries"][0]["sourceInfo"]["siteName"]);
-		  $currentFlowRate = ($json["value"]["timeSeries"][0]["values"][0]["value"][0]["value"]);
-		
-		  if($currentFlowRate <= 0)
-		  {
-			$currentFlowRate = "Data Error";
-		  }
 
-		  $machineDateTime = ($json["value"]["timeSeries"][0]["values"][0]["value"][0]["dateTime"]);
-		  $dt = DateTime::createFromFormat('Y-m-d\TH:i:s+', $machineDateTime);
-		  $humanDate = $dt->format("M d, Y");
-		  $humanTime = $dt->format("g:i A");
-		  $time = array($humanDate, $humanTime);
-		  return $time;
-		}
-		
-		$string = file_get_contents($site);
-		$json = json_decode($string, true);
-		$siteName = ($json["value"]["timeSeries"][0]["sourceInfo"]["siteName"]);
-		$currentFlowRate = ($json["value"]["timeSeries"][0]["values"][0]["value"][0]["value"]);
-		
-		if($currentFlowRate <= 0)
-		{
-			$currentFlowRate = "Data Error";
-		}
+//load WaterData class	
+require_once('classes/WaterData.php');
 
-		$machineDateTime = ($json["value"]["timeSeries"][0]["values"][0]["value"][0]["dateTime"]);
-		$dt = DateTime::createFromFormat('Y-m-d\TH:i:s+', $machineDateTime);
-		$humanDate = $dt->format("M d, Y");
-		$humanTime = $dt->format("g:i A");
-
-		if($currentFlowRate != "Data Error")
-		{
-			$printOut = '<span class="flowrate">' . $currentFlowRate . '</span> <span class="units">cfs</span>';
-		}
-		else
-		{
-			$printOut = '<span class="flowrate red">' . $currentFlowRate . '</span>';
-		}
-		return $printOut;
-	}
+//create WaterData Object
+$waterData = new WaterData;
 
 ?>
 
@@ -59,7 +18,7 @@
 		<div class="col-md-4">
 			<h2>Fanny Bridge</h2>
 			<?php
-				$fanny = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10337500&format=json"); 
+				$fanny = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10337500&format=json"); 
 				print($fanny);
 			?>
 			<hr>
@@ -67,7 +26,7 @@
 		<div class="col-md-4">
 			<h2>Truckee</h2>
 			<?php
-				$truckee = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10338000&format=json"); 
+				$truckee = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10338000&format=json"); 
 				print($truckee);
 			?>
 			<hr>
@@ -75,7 +34,7 @@
 		<div class="col-md-4">
 			<h2>Boca Bridge</h2>
 			<?php
-				$boca = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10344505&format=json"); 
+				$boca = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10344505&format=json"); 
 				print($boca);
 			?>
 			<hr>
@@ -85,7 +44,7 @@
 		<div class="col-md-4">
 			<h2>LT abv Boca</h2>
 			<?php
-				$ltabvboca = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10344400&format=json"); 
+				$ltabvboca = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10344400&format=json"); 
 				print($ltabvboca);
 			?>
 			<hr>
@@ -93,7 +52,7 @@
 		<div class="col-md-4">
 			<h2>LT Boca Dam</h2>
 			<?php
-				$ltbocadam = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10344500&format=json"); 
+				$ltbocadam = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10344500&format=json"); 
 				print($ltbocadam);
 			?>
 			<hr>
@@ -101,7 +60,7 @@
 		<div class="col-md-4">
 			<h2>Farad</h2>
 			<?php
-				$farad = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10346000&format=json"); 
+				$farad = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10346000&format=json"); 
 				print($farad);
 			?>
 			<hr>
@@ -111,7 +70,7 @@
 		<div class="col-md-4">
 			<h2>Reno</h2>
 			<?php
-				$reno = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10348000&format=json"); 
+				$reno = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10348000&format=json"); 
 				print($reno);
 			?>
 			<hr>
@@ -119,7 +78,7 @@
 		<div class="col-md-4">
 			<h2>Glendale Ave</h2>
 			<?php
-				$glendale = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10348036&format=json"); 
+				$glendale = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10348036&format=json"); 
 				print($glendale);
 			?>
 			<hr>
@@ -127,7 +86,7 @@
 		<div class="col-md-4">
 			<h2>Vista Ave</h2>
 			<?php
-				$vista = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10350000&format=json"); 
+				$vista = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10350000&format=json"); 
 				print($vista);
 			?>
 			<hr>
@@ -137,7 +96,7 @@
 		<div class="col-md-4">
 			<h2>Tracy</h2>
 			<?php
-				$tracy = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10350340&format=json"); 
+				$tracy = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10350340&format=json"); 
 				print($tracy);
 			?>
 			<hr>
@@ -145,7 +104,7 @@
 		<div class="col-md-4">
 			<h2>Derby Dam</h2>
 			<?php
-				$derby = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10351600&format=json"); 
+				$derby = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10351600&format=json"); 
 				print($derby);
 			?>
 			<hr>
@@ -153,7 +112,7 @@
 		<div class="col-md-4">
 			<h2>Wadsworth</h2>
 			<?php
-				$wadsworth = getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10351650&format=json"); 
+				$wadsworth = $waterData->getWaterData("http://waterservices.usgs.gov/nwis/iv/?sites=10351650&format=json"); 
 				print($wadsworth);
 			?>
 			<hr>
@@ -165,7 +124,7 @@
 	  	<h3>
 	  	  <em>
 	  	  	<?php 
-	  	  	  $time = getWaterData('time');
+	  	  	  $time = $waterData->getWaterData('time');
 	  	  	  print('All data current as of ' . $time[0] . ' at ' . $time[1] . ' Pacific Time.');
 			?>
 		  </em>
