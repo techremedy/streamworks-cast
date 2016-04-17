@@ -6,6 +6,18 @@ require_once('classes/WaterData.php');
 //create WaterData Object
 $waterData = new WaterData;
 
+//get weather for truckee
+$truckeeWeather = $waterData->getWeather('Truckee', 'CA');
+
+//get weather for reno
+$renoWeather = $waterData->getWeather('Reno', 'NV');
+
+//get weather for sparks
+$sparksWeather = $waterData->getWeather('Sparks', 'NV');
+
+//get weather for pyramid
+$pyramidWeather = $waterData->getWeather('Sutcliffe', 'NV');
+
 ?>
 
 
@@ -135,6 +147,39 @@ $waterData = new WaterData;
   </div><!--end col-md-6-->
   <div class="col-md-6">
     <h2 id="date-time"></h2>
+
+    <div class="row">
+    	<div class="col-md-3 weathergrid">
+		    <div class="weather">
+		    	<h2 class="city">Truckee</h2>
+		  		<span class="temp"><?php print($truckeeWeather["temperature"]);?>&deg;</span>
+		  		<p class="wind">Wind: <?php print($truckeeWeather["wind"]);?></p>
+		    </div>
+		</div>
+    	<div class="col-md-3 weathergrid">
+		    <div class="weather">
+		    	<h2 class="city">Reno</h2>
+		    	<span class="temp"><?php print($renoWeather["temperature"]);?>&deg;</span>
+		    	<p class="wind">Wind: <?php print($renoWeather["wind"]);?></p>
+		    </div>
+		</div>
+    	<div class="col-md-3 weathergrid">
+		    <div class="weather">
+		    	<h2 class="city">Sparks</h2>
+		    	<span class="temp"><?php print($sparksWeather["temperature"]);?>&deg;</span>
+		    	<p class="wind">Wind: <?php print($sparksWeather["wind"]);?></p>
+		    </div>
+		</div>
+    	<div class="col-md-3 weathergrid">
+		    <div class="weather">
+		    	<h2 class="city">Pyramid</h2>
+		    	<span class="temp"><?php print($pyramidWeather["temperature"]);?>&deg;</span>
+		    	<p class="wind">Wind: <?php print($pyramidWeather["wind"]);?></p>
+		    </div>
+		</div>
+	</div><!--end row-->
+
+
     <div class="logo">
       <img src="images/logo.png" width="80%" align="right">
     </div>

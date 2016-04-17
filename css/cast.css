@@ -11,9 +11,24 @@ h3 {
   font-size: 16px;
 }
 
+.weather {
+  float:right;
+  margin-top: 75px;
+  clear:both;
+}
+
+.weathergrid {
+  text-align: center;
+}
+
+.temp {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .logo {
   float:right;
-  margin-top: 350px;
+  margin-top: 110px;
 }
 
 .flowrate {
