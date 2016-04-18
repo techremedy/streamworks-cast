@@ -149,28 +149,29 @@ $pyramidWeather = $waterData->getWeather('Sutcliffe', 'NV');
     <h2 id="date-time"></h2>
 
     <div class="row">
-    	<div class="col-md-3 weathergrid">
+    	<div style="clear:both;"></div>
+    	<div class="col-xs-3 weathergrid">
 		    <div class="weather">
 		    	<h2 class="city">Truckee</h2>
 		  		<span class="temp"><?php print($truckeeWeather["temperature"]);?>&deg;</span>
 		  		<p class="wind">Wind: <?php print($truckeeWeather["wind"]);?></p>
 		    </div>
 		</div>
-    	<div class="col-md-3 weathergrid">
+    	<div class="col-xs-3 weathergrid">
 		    <div class="weather">
 		    	<h2 class="city">Reno</h2>
 		    	<span class="temp"><?php print($renoWeather["temperature"]);?>&deg;</span>
 		    	<p class="wind">Wind: <?php print($renoWeather["wind"]);?></p>
 		    </div>
 		</div>
-    	<div class="col-md-3 weathergrid">
+    	<div class="col-xs-3 weathergrid">
 		    <div class="weather">
 		    	<h2 class="city">Sparks</h2>
 		    	<span class="temp"><?php print($sparksWeather["temperature"]);?>&deg;</span>
 		    	<p class="wind">Wind: <?php print($sparksWeather["wind"]);?></p>
 		    </div>
 		</div>
-    	<div class="col-md-3 weathergrid">
+    	<div class="col-xs-3 weathergrid">
 		    <div class="weather">
 		    	<h2 class="city">Pyramid</h2>
 		    	<span class="temp"><?php print($pyramidWeather["temperature"]);?>&deg;</span>
